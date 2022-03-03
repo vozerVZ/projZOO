@@ -7,18 +7,18 @@ using namespace std;
 #include <fstream>
 
 class Pet{
-    private:
-        string name, kind, breed;
-		int age;
-    public:
-		Pet(int _age, string _name, string _kind, string _breed);
-		void say() const;
-		void play() const;
-		void getInfo() const;
-		string getSpicies() const;
-		int getAge() const;
-		string getName() const;
-		string getBreed() const;
+private:
+    string _name, _kind, _breed;
+    int _age;
+public:
+    Pet(int age, string name, string kind, string breed);
+    void say() const;
+    void play() const;
+    void getInfo() const;
+    string getSpicies() const;
+    int getAge() const;
+    string getName() const;
+    string getBreed() const;
 };
 
 #endif
