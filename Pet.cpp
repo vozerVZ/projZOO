@@ -4,18 +4,18 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 
-Pet::Pet(int _age, string _name, string _kind, string _breed){
-    age = _age;
-    name = _name;
-    breed = _breed;
-    kind = _kind;
+Pet::Pet(int age, string name, string kind, string breed){
+    _age = age;
+    _name = name;
+    _breed = breed;
+    _kind = kind;
 }
 
 void Pet::say() const{
-    if(kind == "cat"){
+    if(_kind == "cat"){
 	cout << "Mya" << endl;
     }else 
-    if(kind == "dog"){
+    if(_kind == "dog"){
 	cout << "Bark" << endl;	
     }else{
 	cout << "Ya ne znay kak ono govorit" << endl;
@@ -23,10 +23,10 @@ void Pet::say() const{
 }
 
 void Pet::play() const{
-    if(kind == "cat"){
+    if(_kind == "cat"){
 	cout << "Cat is playing" << endl;
     }else 
-    if(kind == "dog"){
+    if(_kind == "dog"){
 	cout << "Dog is playing" << endl;	
     }else{
 	cout << "Ono ne playing" << endl;
@@ -34,21 +34,21 @@ void Pet::play() const{
 }
 
 void Pet::getInfo() const{
-    cout << kind << " with breed of " << breed << " with name of " << name << " is " << age << " y.o." << endl;
+    cout << _kind << " with breed of " << _breed << " with name of " << _name << " is " << _age << " y.o." << endl;
 }
 
 string Pet::getSpicies() const{
-    return kind;
+    return _kind;
 }
 
 int Pet::getAge() const{
-    return age;
+    return _age;
 }
 
 string Pet::getName() const{
-    return name;
+    return _name;
 }
 
 string Pet::getBreed() const{
-    return breed;
+    return _breed;
 }
