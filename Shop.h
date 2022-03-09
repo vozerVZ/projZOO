@@ -17,6 +17,7 @@ public:
     Pet get();
     void put(Pet* pet);
     void getInfo() const;
+    Pet& get_by_num(int cage_num);
 };
 
 #endif
