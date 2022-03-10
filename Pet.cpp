@@ -10,7 +10,7 @@ Pet::Pet(){
     _breed = "b";
 }
 
-Pet::Pet(int age, string name, string breed){
+Pet::Pet(int age, const string& name, const string& breed){
     _age = age;
     _name = name;
     _breed = breed;
@@ -32,7 +32,7 @@ string Pet::getBreed() const{
     return _breed;
 }
 
-Cat::Cat(int age, string name, string breed):Pet(age, name, breed){
+Cat::Cat(int age, const string& name, const string& breed):Pet(age, name, breed){
     string _kind = "cat";
 }
 
@@ -44,7 +44,7 @@ void Cat::play() {
     cout << "I'm a cat and I play" << endl;
 }
 
-Dog::Dog(int age, string name, string breed):Pet(age, name, breed){
+Dog::Dog(int age, const string& name, const string& breed):Pet(age, name, breed){
     string _kind = "dog";
 }
 
@@ -56,7 +56,7 @@ void Dog::say() {
     cout << "Gaf gaf" << endl;
 }
 
-Other::Other(int age, string name, string breed):Pet(age, name, breed){
+Other::Other(int age, const string& name, const string& breed):Pet(age, name, breed){
     string _kind = "other";
 }
 

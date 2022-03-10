@@ -12,7 +12,7 @@ private:
     int _age;
 public:
     Pet();
-    Pet(int age, string name, string breed);
+    Pet(int age, const string& name, const string& breed);
     virtual void say() = 0;
     virtual void play() = 0;
     void getInfo() const;
@@ -25,7 +25,7 @@ class Cat : public Pet{
 private:
     string _kind;
 public:
-    Cat(int age, string name, string breed);
+    Cat(int age, const string& name, const string& breed);
     void play() override;
     void say() override;
 };
@@ -34,7 +34,7 @@ class Dog : public Pet{
 private:
     string _kind;
 public:
-    Dog(int age, string name, string breed);
+    Dog(int age, const string& name, const string& breed);
     void play() override;
     void say() override;
 };
@@ -43,7 +43,7 @@ class Other : public Pet{
 private:
     string _kind;
 public:
-    Other(int age, string name, string breed);
+    Other(int age, const string& name, const string& breed);
     void play() override;
     void say() override;
 };
