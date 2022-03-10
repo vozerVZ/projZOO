@@ -6,14 +6,19 @@ using namespace std;
 #include <vector>
 #include "Pet.h"
 
-Shop::Shop(string name){
+Shop::Shop(const string& name){
     _name = name;
+}
+
+Shop::Shop(const Shop& copy_shop){
+    _name = copy_shop._name;
+    _pets = copy_shop._pets;
 }
 
 Pet* Shop::get(){
     if (_pets.size() == 0){
         cout << "Shop is empty" << endl;
-        //Добавить какой-то возврат
+        return nullptr;
     }
     Pet* result = _pets.back();
     _pets.pop_back();
@@ -31,7 +36,7 @@ void Shop::getInfo() const{
 Pet* Shop::get_by_num(int cage_num){
     if (cage_num < 0 || cage_num > _pets.size()){
         cout << "This cage is empty" << endl;
-        //Добавить какой-то возврат
+        return nullptr;
     }
     return _pets[cage_num];
 }

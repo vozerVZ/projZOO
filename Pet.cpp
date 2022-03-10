@@ -61,7 +61,7 @@ Other::Other(int age, string name, string breed):Pet(age, name, breed){
 }
 
 void Other::play() {
-    cout << "I'm a other and I play" << endl;
+    cout << "I'm other and I play" << endl;
 }
 
 void Other::say() {

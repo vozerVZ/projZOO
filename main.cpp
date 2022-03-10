@@ -12,5 +12,5 @@ int main(){
     cat.say();
     cat.getInfo();
     cat.getAge();
-    return 0;    
+    return 0;   
 }

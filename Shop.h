@@ -13,7 +13,8 @@ private:
     string _name;
     vector<Pet*> _pets;
 public:
-    Shop(string name);
+    Shop(const string& name);
+    Shop(const Shop& copy_shop);
     Pet* get();
     void put(Pet* pet);
     void getInfo() const;
