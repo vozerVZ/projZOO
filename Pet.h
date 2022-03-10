@@ -8,17 +8,44 @@ using namespace std;
 
 class Pet{
 private:
-    string _name, _kind, _breed;
+    string _name, _breed;
     int _age;
 public:
-    Pet(int age, string name, string kind, string breed);
-    void say() const;
-    void play() const;
+    Pet();
+    Pet(int age, string name, string breed);
+    virtual void say() = 0;
+    virtual void play() = 0;
     void getInfo() const;
-    string getSpicies() const;
     int getAge() const;
     string getName() const;
     string getBreed() const;
+};
+
+class Cat : public Pet{
+private:
+    string _kind;
+public:
+    Cat(int age, string name, string breed);
+    void play() override;
+    void say() override;
+};
+
+class Dog : public Pet{
+private:
+    string _kind;
+public:
+    Dog(int age, string name, string breed);
+    void play() override;
+    void say() override;
+};
+
+class Other : public Pet{
+private:
+    string _kind;
+public:
+    Other(int age, string name, string breed);
+    void play() override;
+    void say() override;
 };
 
 #endif

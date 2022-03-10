@@ -4,41 +4,20 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 
-Pet::Pet(int age, string name, string kind, string breed){
+Pet::Pet(){
+    _age = 0;
+    _name = "a";
+    _breed = "b";
+}
+
+Pet::Pet(int age, string name, string breed){
     _age = age;
     _name = name;
     _breed = breed;
-    _kind = kind;
-}
-
-void Pet::say() const{
-    if(_kind == "cat"){
-	cout << "Mya" << endl;
-    }else 
-    if(_kind == "dog"){
-	cout << "Bark" << endl;	
-    }else{
-	cout << "Ya ne znay kak ono govorit" << endl;
-    }
-}
-
-void Pet::play() const{
-    if(_kind == "cat"){
-	cout << "Cat is playing" << endl;
-    }else 
-    if(_kind == "dog"){
-	cout << "Dog is playing" << endl;	
-    }else{
-	cout << "Ono ne playing" << endl;
-    }
 }
 
 void Pet::getInfo() const{
-    cout << _kind << " with breed of " << _breed << " with name of " << _name << " is " << _age << " y.o." << endl;
-}
-
-string Pet::getSpicies() const{
-    return _kind;
+    cout << "Breed: " << _breed << " with name of " << _name << " is " << _age << " y.o." << endl;
 }
 
 int Pet::getAge() const{
@@ -51,4 +30,40 @@ string Pet::getName() const{
 
 string Pet::getBreed() const{
     return _breed;
+}
+
+Cat::Cat(int age, string name, string breed):Pet(age, name, breed){
+    string _kind = "cat";
+}
+
+void Cat::say() {
+    cout << "Myyyyyaaaau" << endl;
+}
+
+void Cat::play() {
+    cout << "I'm a cat and I play" << endl;
+}
+
+Dog::Dog(int age, string name, string breed):Pet(age, name, breed){
+    string _kind = "dog";
+}
+
+void Dog::play() {
+    cout << "I'm a dog and I play" << endl;
+}
+
+void Dog::say() {
+    cout << "Gaf gaf" << endl;
+}
+
+Other::Other(int age, string name, string breed):Pet(age, name, breed){
+    string _kind = "other";
+}
+
+void Other::play() {
+    cout << "I'm a other and I play" << endl;
+}
+
+void Other::say() {
+    cout << "Chupapy munynya" << endl;
 }

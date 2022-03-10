@@ -11,13 +11,13 @@ using namespace std;
 class Shop{
 private:
     string _name;
-    vector<Pet> _pets;
+    vector<Pet*> _pets;
 public:
     Shop(string name);
-    Pet get();
+    Pet* get();
     void put(Pet* pet);
     void getInfo() const;
-    Pet& get_by_num(int cage_num);
+    Pet* get_by_num(int cage_num);
 };
 
 #endif
