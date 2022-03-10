@@ -3,9 +3,8 @@
 
 using namespace std;
 #include <string>
-#include <iostream>
-#include <fstream>
 #include <vector>
+#include <iostream>
 #include "Pet.h"
 
 class Shop{
@@ -17,10 +16,11 @@ public:
     Shop(const Shop& copy_shop);
     bool operator==(const Shop& shp);
     Shop& operator=(const Shop& shp);
+    Pet* operator[](int id);
+    void operator()();
+    void operator<<(Pet* pet);
     Pet* get();
     void put(Pet* pet);
-    void getInfo() const;
-    Pet* get_by_num(int cage_num);
 };
 
 #endif

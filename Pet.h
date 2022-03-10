@@ -4,7 +4,6 @@
 using namespace std;
 #include <string>
 #include <iostream>
-#include <fstream>
 
 class Pet{
 private:
@@ -13,8 +12,9 @@ private:
 public:
     Pet();
     Pet(int age, const string& name, const string& breed);
-    virtual void say() = 0;
-    virtual void play() = 0;
+    virtual void say() const = 0;
+    virtual void play() const = 0;
+    virtual string getSpicies() const = 0;
     void getInfo() const;
     int getAge() const;
     string getName() const;
@@ -23,29 +23,32 @@ public:
 
 class Cat : public Pet{
 private:
-    string _kind;
+    static string _kind;
 public:
     Cat(int age, const string& name, const string& breed);
-    void play() override;
-    void say() override;
+    void play() const override;
+    void say() const override;
+    string getSpicies() const override;
 };
 
 class Dog : public Pet{
 private:
-    string _kind;
+    static string _kind;
 public:
     Dog(int age, const string& name, const string& breed);
-    void play() override;
-    void say() override;
+    void play() const override;
+    void say() const override;
+    string getSpicies() const override;
 };
 
 class Other : public Pet{
 private:
-    string _kind;
+    static string _kind;
 public:
     Other(int age, const string& name, const string& breed);
-    void play() override;
-    void say() override;
+    void play() const override;
+    void say() const override;
+    string getSpicies() const override;
 };
 
 #endif

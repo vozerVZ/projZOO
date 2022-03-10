@@ -1,8 +1,5 @@
 #include "Pet.h"
 using namespace std;
-#include <string>
-#include <iostream>
-#include <fstream>
 
 Pet::Pet(){
     _age = 0;
@@ -12,7 +9,9 @@ Pet::Pet(){
 
 Pet::Pet(int age, const string& name, const string& breed){
     _age = age;
+    _name.clear();
     _name = name;
+    _breed.clear();
     _breed = breed;
 }
 
@@ -36,34 +35,46 @@ Cat::Cat(int age, const string& name, const string& breed):Pet(age, name, breed)
     string _kind = "cat";
 }
 
-void Cat::say() {
+void Cat::say() const{
     cout << "Myyyyyaaaau" << endl;
 }
 
-void Cat::play() {
+void Cat::play() const{
     cout << "I'm a cat and I play" << endl;
+}
+
+string Cat::getSpicies() const{
+    return "cat";
 }
 
 Dog::Dog(int age, const string& name, const string& breed):Pet(age, name, breed){
     string _kind = "dog";
 }
 
-void Dog::play() {
+void Dog::play() const{
     cout << "I'm a dog and I play" << endl;
 }
 
-void Dog::say() {
+void Dog::say() const{
     cout << "Gaf gaf" << endl;
+}
+
+string Dog::getSpicies() const{
+    return "dog";
 }
 
 Other::Other(int age, const string& name, const string& breed):Pet(age, name, breed){
     string _kind = "other";
 }
 
-void Other::play() {
+void Other::play() const{
     cout << "I'm other and I play" << endl;
 }
 
-void Other::say() {
+void Other::say() const{
     cout << "Chupapy munynya" << endl;
+}
+
+string Other::getSpicies() const{
+    return "other";
 }
