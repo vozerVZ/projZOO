@@ -15,6 +15,18 @@ Shop::Shop(const Shop& copy_shop){
     _pets = copy_shop._pets;
 }
 
+Shop& Shop::operator=(const Shop& shp){
+    if(&shp == this){
+        return *this;
+    }
+
+    _name.clear();
+    _pets.clear();
+
+    _name = shp._name;
+    _pets = shp._pets;
+}
+
 Pet* Shop::get(){
     if (_pets.size() == 0){
         cout << "Shop is empty" << endl;
