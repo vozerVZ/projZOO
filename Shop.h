@@ -15,6 +15,7 @@ private:
 public:
     Shop(const string& name);
     Shop(const Shop& copy_shop);
+    bool operator==(const Shop& shp);
     Shop& operator=(const Shop& shp);
     Pet* get();
     void put(Pet* pet);

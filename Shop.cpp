@@ -27,6 +27,27 @@ Shop& Shop::operator=(const Shop& shp){
     _pets = shp._pets;
 }
 
+bool Shop::operator==(const Shop& shp){
+    if(&shp == this){
+        return true;
+    }
+    if(_pets.size() != shp._pets.size()){
+        return false;
+    }
+    int animals = 0;
+    for(size_t i = 0; i < _pets.size(); i++){
+        for(size_t j = 0; j < _pets.size(); j++){
+            if(_pets[i] == shp._pets[j]){
+                animals++;
+            }
+        }
+    }
+    if(animals == _pets.size()){
+        return true;
+    }
+    return false;
+}
+
 Pet* Shop::get(){
     if (_pets.size() == 0){
         cout << "Shop is empty" << endl;
