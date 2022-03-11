@@ -8,9 +8,6 @@ using namespace std;
 #include "Pet.h"
 
 class Shop{
-private:
-    string _name;
-    vector<Pet*> _pets;
 public:
     Shop(const string& name);
     Shop(const Shop& copy_shop);
@@ -21,6 +18,9 @@ public:
     void operator<<(Pet* pet);
     Pet* get();
     void put(Pet* pet);
+private:
+    string _name;
+    vector<Pet*> _pets;
 };
 
 #endif
